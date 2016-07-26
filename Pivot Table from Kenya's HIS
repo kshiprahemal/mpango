@@ -1,0 +1,35 @@
+#### Code from mock Sierra - Leone Database
+username<-"admin"
+password<-"district"
+#Change the "skipMeta paramater to false
+url<-URLencode("https://play.dhis2.org/demo/api/analytics.json?dimension=J5jldMd8OHv:CXw2yu5fodb;EYbopBOJWsW;RXL3lPSK8oG;tDZVQ1WtwpA;uYxK4wmcPqA&dimension=dx:SA7WeFZnUci;V37YqbqpEhV;rbkr8PL0rwM;ybzlGLjWwnK&dimension=pe:THIS_YEAR&displayProperty=NAME&skipMeta=false")
+r<-httr::GET(url, httr::authenticate(username,password),httr::timeout(60))
+http_status(r)
+
+#> http_status(r)
+# $category
+# [1] "Success"
+# 
+# $reason
+# [1] "OK"
+# 
+# $message
+# [1] "Success: (200) OK"
+
+#### Code from Kenya HIS
+username<-"bbellows"
+password<-"44DHIS11"
+#Change the "skipMeta paramater to false
+url<-URLencode("https://hiskenya.org/api/analytics.json?dimension=IwvoiaXmT7G:&dimension=dx:fJ7CyT97iJC&dimension=pe:LAST_12_MONTHS&filter=ou:USER_ORGUNIT&displayProperty=NAME&skipMeta=false")
+r<-httr::GET(url, httr::authenticate(username,password),httr::timeout(60))
+http_status(r)
+
+#> http_status(r)
+# $category
+# [1] "Client error"
+# 
+# $reason
+# [1] "Unauthorized"
+# 
+# $message
+# [1] "Client error: (401) Unauthorized"
